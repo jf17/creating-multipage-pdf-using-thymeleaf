@@ -6,18 +6,17 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        Service testee = new Service();
-
+        Service service = new Service();
 
 
         var model = Map.of(
                 "title", "Hello world!",
                 "pages", List.of(1, 2, 3));
 
-        byte[] pdf = testee.generatePdf(model);
-        testee.save(pdf);
+        byte[] pdf = service.generatePdf(model);
+        service.save(pdf);
 
-        var pdfAsText = testee.pdfToText(pdf);
+        var pdfAsText = service.pdfToText(pdf);
     }
 
 
